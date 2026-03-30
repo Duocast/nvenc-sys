@@ -17,6 +17,9 @@ build = "build.rs"
 cuda = []
 use-bindgen = ["bindgen", "regex"]
 
+[dependencies]
+tracing = "0.1"
+
 [dev-dependencies]
 libloading = "0.9"
 
