@@ -18,7 +18,7 @@ cuda = []
 use-bindgen = ["bindgen", "regex"]
 
 [dev-dependencies]
-libloading = "0.7"
+libloading = "0.9"
 
 [build-dependencies]
 regex = { version = "1.12.3", optional = true }
