@@ -22,6 +22,6 @@ libloading = "0.7"
 
 [build-dependencies]
 regex = { version = "1.5.5", optional = true }
-bindgen = { version = "0.59", default-features = false, features = [
+bindgen = { version = "0.72.1", default-features = false, features = [
     "runtime",
 ], optional = true }
