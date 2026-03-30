@@ -12,12 +12,11 @@ fn main() -> std::io::Result<()> {
     bindgen::builder()
         .header(nvenc_header_path)
         .raw_line("// Generated through nvenc-sys build script")
-        .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .allowlist_type("NV.*")
         .allowlist_function("Nv.*")
         .allowlist_var("NVENC.*")
         .allowlist_var("NV_MAX.*")
-        .size_t_is_usize(true)
         .default_enum_style(bindgen::EnumVariation::Rust {
             non_exhaustive: false,
         })
@@ -108,7 +107,7 @@ fn main() -> std::io::Result<()> {
         bindgen::builder()
             .header(cuda_header_path)
             .raw_line("// Generated through nvenc-sys build script")
-            .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+            .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
             .allowlist_function("cuGetErrorString")
             .allowlist_function("cuGetErrorName")
             .allowlist_function("cuInit")
@@ -140,7 +139,6 @@ fn main() -> std::io::Result<()> {
             .allowlist_function("cuDestroyExternalSemaphore")
             .allowlist_function("cuWaitExternalSemaphoresAsync")
             .allowlist_function("cuSignalExternalSemaphoresAsync")
-            .size_t_is_usize(true)
             .default_enum_style(bindgen::EnumVariation::Rust {
                 non_exhaustive: false,
             })
